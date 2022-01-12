@@ -1,0 +1,94 @@
+{% load static %}
+<html>
+
+<head>
+    <title>Spider Monkey</title>
+    <style>
+        body {
+            background-color: #fffefe;
+            /* color: whitesmoke; */
+        }
+        
+        .links {
+            text-decoration: none;
+            color: black;
+        }
+        
+        table {
+            border-radius: 1em;
+        }
+        
+        .styled-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            /* border-radius: 5px; */
+        }
+        
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+        }
+        
+        .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+            /* border-radius: 5px; */
+        }
+        
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+            color: black;
+        }
+        
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+            /* border-radius: 5px; */
+        }
+        
+        .styled-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+            /* border-radius: 5px; */
+        }
+        
+        .row {
+            background-color: #009879;
+            color: rgb(252, 252, 252);
+            /* border-radius: 50px; */
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <table class="styled-table">
+            <thread>
+                <tr class="row">
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thread>
+            <tbody>
+                {% for n, p in data.items %}
+                <tr class="active-row">
+                    <td>
+                        <a href="{{p.1}}" target="_blank" class="links">
+                            {{n}}
+                        </a>
+                    </td>
+                    <td>
+                        {{p.0}}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </center>
+    <!-- <p></p> -->
+</body>
+
+</html>

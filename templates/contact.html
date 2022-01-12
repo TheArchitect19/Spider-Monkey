@@ -1,0 +1,388 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Spider Monkey</title>
+    <!-- <link rel="stylesheet" href="{% static 'style.css' %}"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,600;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            min-height: 100vh;
+            width: 100;
+            /* background-image: linear-gradient(rgba(214, 178, 212, 0.7), rgba(30, 17, 4, 0.7)),
+            url('{% static "ele.jpeg" %}'); */
+            background-color: black;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            /* font-family: Playfair; */
+        }
+
+        nav {
+            display: flex;
+            padding: 2% 6%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav img {
+            width: 150px;
+        }
+
+        .nav-links {
+            flex: 1;
+            text-align: right;
+        }
+
+        .nav-links ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+
+        .nav-links ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .nav-links ul li::after {
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #f44336;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+            ;
+        }
+
+        .nav-links ul li:hover::after {
+            width: 100%;
+        }
+
+        .text-box {
+            width: 90%;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .text-box h1 {
+            font-size: 62px;
+        }
+
+        .text-box p {
+            margin: 10px 0 40px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 12px 34px;
+            font-size: 13px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .hero-btn:hover {
+            border: 1px solid #f44336;
+            background: #f44336;
+            transition: 1s;
+        }
+
+        nav .fa {
+            display: none;
+        }
+
+        @media(max-width: 700px) {
+            .text-box h1 {
+                font-size: 20px;
+            }
+
+            .nav-links ul li {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                background: #f44336;
+                height: 100vh;
+                width: 200px;
+                top: 0;
+                right: -200px;
+                text-align: left;
+                z-index: 2;
+                transition: 1s;
+            }
+
+            nav .fa {
+                display: block;
+                color: #fff;
+                margin: 10px;
+                font-size: 22px;
+                cursor: pointer
+            }
+
+            .nav-links ul {
+                padding: 30px;
+            }
+        }
+
+        .course {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 600;
+            color: chocolate;
+        }
+
+        .row {
+            margin-top: 5%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .course-col {
+            flex-basis: 31%;
+            background: #fff3f3;
+            border-radius: 10px;
+            margin-bottom: 5%;
+            padding: 20px 12px;
+            box-sizing: border-box;
+            transition: 0.5s;
+        }
+
+        h3 {
+            text-align: center;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        .course-col:hover {
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        @media(max-width: 700px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+
+        .campus {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .course-col {
+            flex-basis: 32%;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-col {
+            width: 100%;
+        }
+
+        /*-------about us----*/
+
+        .sub-header {
+            height: 70vh;
+            width: 100%;
+            background-image: url('{% static "back.png" %}');
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+            color: #fff;
+        }
+
+        .about-us {
+            width: 80%;
+            margin: auto;
+            padding-top: 80px;
+            padding-bottom: 50px;
+        }
+
+        .about-col {
+            flex-basis: 48%;
+            padding: 30px 2px;
+        }
+
+        .about-col img {
+            width: 70%;
+            height: 70%;
+
+        }
+
+        .about-col h1 {
+            padding-top: 0;
+
+        }
+
+        .about-col h3 {
+            padding: 15px 0 25px;
+            text-align: left;
+        }
+
+        .red-btn {
+            border: 1px solid #f44336;
+            background: transparent;
+            color: #f44336;
+        }
+
+        .red-btn:hover {
+            color: #fff;
+
+        }
+
+        .campus-col {
+            flex-basis: 31%;
+            background: #fff3f3;
+            border-radius: 10px;
+            margin-bottom: 5%;
+            padding: 20px 12px;
+            box-sizing: border-box;
+            transition: 0.5s;
+        }
+
+        h3 {
+            text-align: center;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        .campus-col:hover {
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .footer h4 {
+            margin-bottom: 25px;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        .contact-us {
+            width: 80%;
+            margin: auto;
+        }
+
+        .contact-col {
+            flex-basis: 48%;
+            margin-bottom: 30px;
+
+        }
+
+        .contact-col div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-col input,
+        .contact-col textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 17px;
+            outline: none;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="home"><img src="{% static 'sample.png' %}" height="250" ,width="300",align="top"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-window-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="home">HOME</a></li>
+                    <li><a href="about">ABOUT US</a></li>
+                    <li><a href="contact">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>CONTACT US</h1>
+    </section>
+    <section class="contact-us">
+        <div class="row">
+            <div class="contact-col">
+                <div>
+                    <span>
+                        <h3>coolcrayon33@gmail.com</h3>
+                        <p>EMAIL US FOR YOUR QUERY</p>
+                    </span>
+                </div>
+            </div>
+            <div class="contact-col">
+                <div>
+                    <span>
+                        <h3>9368875433</h3>
+                        <p>CALL US</p>
+                    </span>
+                </div>
+                <div class="contact-col">
+                    <form action="formhandler.php" method="post">
+                        <input type="text" name="name" placeholder="ENTER YOUR NAME" required>
+                        <input type="email" name="email" placeholder="ENTER EMAIL ADDRESS" required>
+                        <textarea rows="8" name="message" placeholder="Message" required></textarea>
+                        <button type="submit" class="hero-btn red-btn">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+</body>
+
+</html>

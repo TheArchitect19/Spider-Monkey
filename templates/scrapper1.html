@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Spider Monkey</title>
+    <link rel="stylesheet" href="{% static 'scrapper.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"></a><img src="palki.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-window-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="/about">ABOUT US</a></li>
+                    <li><a href="/services">SERVICES</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>SPIDER MONKEY</h1>
+            <p>This website will help you blah blah</p>
+            <form method="POST" action="search">
+                {% csrf_token %}
+
+                <p><input type="text" name="text" placeholder="Search Your Product"></p>
+
+
+                <button class="hero-btn">SEARCH</button>
+                <!-- <a href="" class="hero-btn">SEARCH</a> -->
+            </form>
+
+        </div>
+    </section>
+    <section>
+    </section>
+    <section class="course">
+        <h1>1st heading</h1>
+        <p>tell about your website</p>
+        <div class="row">
+            <div class="course-col">
+                <h3>title</h3>
+                <p>about this title</p>
+            </div>
+            <div class="course-col">
+                <h3>2nd title</h3>
+                <p>about this title</p>
+            </div>
+            <div class="course-col">
+                <h3>3rdtitle</h3>
+                <p>about this title</p>
+            </div>
+        </div>
+    </section>
+    <section class="campus">
+        <h1>2nd heading</h1>
+        <p>discription</p>
+    </section>
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+</body>
+
+</html>
