@@ -14,6 +14,7 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
     <style>
+        /* {% load static %} */
         * {
             margin: 0;
             padding: 0;
@@ -22,13 +23,11 @@
         .header {
             min-height: 100vh;
             width: 100;
-            /* background-image: linear-gradient(rgba(214, 178, 212, 0.7), rgba(30, 17, 4, 0.7)),
-            url('{% static "ele.jpeg" %}'); */
-            background-color: black;
+            background-image: linear-gradient(rgba(214, 178, 212, 0.7), rgba(30, 17, 4, 0.7)),
+            url('{% static "ele.jpeg" %}');
             background-position: center;
             background-size: cover;
             position: relative;
-            /* font-family: Playfair; */
         }
 
         nav {
@@ -220,7 +219,8 @@
         .sub-header {
             height: 70vh;
             width: 100%;
-            background-image: url('{% static "back.png" %}');
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+            url('{% static "back.png" %}');
             background-position: center;
             background-size: cover;
             text-align: center;
@@ -329,7 +329,7 @@
 <body>
     <section class="sub-header">
         <nav>
-            <a href="home"><img src="{% static 'sample.png' %}" height="250" ,width="300",align="top"></a>
+            <a href="home"><img src="{% static 'sample.png' %}" height="250" ,width="300" ,align="top"></a>
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-window-close" onclick="hideMenu()"></i>
                 <ul>
